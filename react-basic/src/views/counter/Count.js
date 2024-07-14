@@ -5,6 +5,7 @@ import {
   increment,
   decrement,
   increaseFlatNumber,
+  increaseFlatNumberAsync,
 } from "./counterSlice";
 import { useState } from "react";
 
@@ -46,7 +47,14 @@ export function Counter() {
         >
           Add Amount
         </button>
-        <button className={styles.asyncButton}>Add Async</button>
+        <button
+          className={styles.asyncButton}
+          onClick={() =>
+            dispatch(increaseFlatNumberAsync(Number(incrementedValue) || 0))
+          }
+        >
+          Add Async
+        </button>
       </div>
     </div>
   );
