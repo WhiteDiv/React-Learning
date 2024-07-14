@@ -1,14 +1,17 @@
-import { useSelector, useDispatch } from "react-redux";
-import { incremented, decremented } from "./store/modules/counter";
+import { Counter } from "./views/counter/Count";
+import "./App.css";
+import logo from "./logo.svg";
 
 function App() {
-  const { value } = useSelector((state) => state.count);
-  const dispatch = useDispatch();
   return (
     <div className="App">
-      <button onClick={() => dispatch(decremented())}>-</button>
-      {value}
-      <button onClick={() => dispatch(incremented())}>+</button>
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <Counter />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+      </header>
     </div>
   );
 }
